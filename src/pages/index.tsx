@@ -17,7 +17,18 @@ export default function Home() {
                 />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <main>test</main>
+            <main className="container mx-auto">
+                {/* Hero Text */}
+                <h1 className="text-7xl text-[#3D1061] font-title">
+                    Let fate decide your food for you
+                </h1>
+                <h2 className="text-3xl font-light">
+                    Dine and discover with Foodbox.
+                </h2>
+                <button className="button purple-shadow">
+                    Roll Now
+                </button>
+            </main>
         </>
     );
 }
