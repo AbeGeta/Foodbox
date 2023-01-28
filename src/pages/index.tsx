@@ -2,6 +2,8 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import BoxWFruits from "@/components/svgs/BoxWFruits";
+import Link from 'next/link'
+import DietaryRestrictionsList from "@/components/DietaryRestrictionsList";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -9,7 +11,7 @@ export default function Home() {
     return (
         <>
             <Head>
-                <title>Create Next App</title>
+                <title>Foodbox</title>
                 <meta name="description" content="Foodbox: Dine and Discover" />
                 <meta
                     name="viewport"
