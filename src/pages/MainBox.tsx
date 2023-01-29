@@ -14,7 +14,7 @@ export default function MainBox() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
             <main className="container mx-auto w-screen h-screen px-6 flex flex-col items-end justify-center relative ">
-                <div className="absolute overflow-y-hidden -left-10 opacity-80">
+                <div className="absolute overflow-y-hidden -left-[10%] opacity-80">
                     <MainBoxPageBackground></MainBoxPageBackground>
                 </div>
 
