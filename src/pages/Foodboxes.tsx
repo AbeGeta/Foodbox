@@ -1,6 +1,7 @@
 import Head from "next/head";
 import MainBoxBackground from "@/components/svgs/MainBoxBackground";
 import RecommendedBackground from "@/components/svgs/RecommendedBackground";
+import Link from "next/link";
 
 export default function Foodboxes() {
     return (
@@ -20,17 +21,21 @@ export default function Foodboxes() {
                 </h1>
                 {/* top main box rec */}
                 <section className="flex justify-around mt-5">
-                    <div className="relative bg-theme-purple h-40 w-1/3 rounded-3xl button-shadow text-theme-orange">
-                        <MainBoxBackground></MainBoxBackground>
+                    <Link href={"MainBox"} className="relative bg-theme-purple h-40 w-1/3 rounded-3xl button-shadow text-theme-orange active:shadow-none transition-all">
+                        <div >
+                            <MainBoxBackground></MainBoxBackground>
 
-                        <div className="absolute text-white bottom-5 left-5">
-                            <h2 className="font-title text-2xl">Main Box</h2>
-                            <h3 className="text-sm">
-                                Literally everything we have to offer!
-                            </h3>
+                            <div className="absolute text-white bottom-5 left-5">
+                                <h2 className="font-title text-2xl drop-shadow">
+                                    Main Box
+                                </h2>
+                                <h3 className="text-sm drop-shadow-md">
+                                    Literally everything we have to offer!
+                                </h3>
+                            </div>
                         </div>
-                    </div>
-                    <div className="relative bg-theme-purple h-40 w-1/3 rounded-3xl button-shadow text-theme-orange">
+                    </Link>
+                    <div className="relative bg-theme-purple h-40 w-1/3 rounded-3xl button-shadow text-theme-orange opacity-50 cursor-not-allowed">
                         <RecommendedBackground></RecommendedBackground>
                         <div className="absolute text-white bottom-1/2 left-1/2 -translate-x-1/2 translate-y-1/2 text-center w-fit">
                             <h2 className="font-title text-2xl">Recommended</h2>

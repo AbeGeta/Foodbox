@@ -1,5 +1,6 @@
 import Head from "next/head";
 import MainBoxPageBackground from "@/components/svgs/MainBoxPageBackground";
+import Link from "next/link";
 
 export default function MainBox() {
     return (
@@ -33,7 +34,10 @@ export default function MainBox() {
                     </div>
                     <div className="flex mt-4 gap-4">
                         <div className="flex flex-col items-center">
-                            <button className="button button-shadow bg-white text-theme-purple px-12">
+                            <button
+                                disabled
+                                className="button cursor-not-allowed button-shadow bg-white text-theme-purple px-12 opacity-50"
+                            >
                                 Single Pull
                             </button>
                             <span className="mt-2 text-theme-purple">
@@ -44,7 +48,10 @@ export default function MainBox() {
                             </span>
                         </div>
                         <div className="flex flex-col items-center">
-                            <button className="button button-shadow bg-theme-orange text-theme-purple px-12">
+                            <button
+                                disabled
+                                className="button cursor-not-allowed opacity-50 button-shadow bg-theme-orange text-theme-purple px-12"
+                            >
                                 Pull For Two
                             </button>
                             <span className="mt-2 text-theme-purple">
@@ -55,9 +62,12 @@ export default function MainBox() {
                             </span>
                         </div>
                         <div className="flex flex-col justify-center items-center">
-                            <button className="button button-shadow bg-theme-purple text-theme-orange px-12">
+                            <Link
+                                href={"MainBoxPull"}
+                                className="button button-shadow bg-theme-purple text-theme-orange px-12 active:shadow-none transition-all"
+                            >
                                 Ultimate Pull
-                            </button>
+                            </Link>
                             <span className="mt-2 text-theme-orange drop-shadow-2xl">
                                 1 item
                             </span>

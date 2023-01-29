@@ -6,7 +6,7 @@ function MainBoxBackground() {
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 493 259"
-            className="absolute w-full h-full"
+            className="absolute w-full h-full opacity-70"
         >
             <g filter="url(#filter0_d_7663_596)">
                 <path

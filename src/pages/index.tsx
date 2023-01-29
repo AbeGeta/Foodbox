@@ -2,6 +2,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import BoxWFruits from "@/components/svgs/BoxWFruits";
+import Link from "next/link";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,9 +29,14 @@ export default function Home() {
                         <h2 className="text-3xl font-light mt-6">
                             Dine and discover with Foodbox.
                         </h2>
-                        <button className="button button-shadow bg-theme-orange text-theme-purple mt-6 py-3 px-12">
-                            <span className="text-black">Roll Now</span>
-                        </button>
+                        <div className="mt-8">
+                            <Link
+                                href={"Foodboxes"}
+                                className="button button-shadow bg-theme-orange text-theme-purple py-3 px-12 active:shadow-none transition-all"
+                            >
+                                <span className="text-black">Roll Now</span>
+                            </Link>
+                        </div>
                     </div>
                     {/* hero right */}
                     <div className="absolute w-5/12 right-0 bottom-0">
