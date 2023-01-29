@@ -88,7 +88,11 @@ export default function MainBox() {
                 </div>
                 <button
                     className="button bg-theme-orange text-theme-purple bottom-[15%] button-shadow left-1/2 -translate-x-1/2 absolute"
-                    onClick={() => results && alert(JSON.stringify(results[5]))}
+                    onClick={() =>
+                        alert(
+                            results ? JSON.stringify(results[5]) : "FDX2352352"
+                        )
+                    }
                 >
                     Get Coupon
                 </button>
