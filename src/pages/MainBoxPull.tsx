@@ -1,47 +1,15 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from "next/head";
-import MainBoxPageBackground from "@/components/svgs/MainBoxPageBackground";
 import PullPageBg from "@/components/svgs/PullPageBg";
-import Link from "next/link";
-import { useQuery } from "react-query";
+import { useEffect, useState } from "react";
+import * as Dialog from "@radix-ui/react-dialog";
 
-const draws = [
-    {
-        title: "White Ham",
-        rarity: "epic",
-        price: 4.49,
-        img: "https://picsum.photos/300/200",
-    },
-    {
-        title: "Creamy Coleslaw",
-        rarity: "legendary",
-        price: 8.99,
-        img: "https://picsum.photos/300/200",
-    },
-    {
-        title: "Creamy Coleslaw",
-        rarity: "legendary",
-        price: 8.99,
-        img: "https://picsum.photos/300/200",
-    },
-    {
-        title: "Creamy Coleslaw",
-        rarity: "rare",
-        price: 8.99,
-        img: "https://picsum.photos/300/200",
-    },
-    {
-        title: "Creamy Coleslaw",
-        rarity: "common",
-        price: 8.99,
-        img: "https://picsum.photos/300/200",
-    },
-];
-
-const getFoods = async () => {
-    const result = await fetch("").then((res) => res.json());
-    return result;
-};
+interface Draw {
+    name: string;
+    rarity: string;
+    cost: number;
+    img: string;
+}
 
 export default function MainBox() {
     const rarity_shadows: { [key: string]: string } = {
@@ -50,8 +18,12 @@ export default function MainBox() {
         epic: "shadow-purple-500",
         common: "shadow-black",
     };
-    const { data, isSuccess } = useQuery("foods", getFoods);
-
+    const [results, setResults] = useState<null | Draw[]>(null);
+    useEffect(() => {
+        fetch("http://127.0.0.1:8000/5")
+            .then((res) => res.json())
+            .then((res) => setResults(res));
+    }, []);
     return (
         <>
             <Head>
@@ -69,50 +41,53 @@ export default function MainBox() {
                 </div>
                 {/* Food Cards */}
                 <div className="flex w-full justify-evenly gap-3 items-center z-10 mt-16">
-                    {draws.map((draw) => (
-                        <div
-                            key={draw.title}
-                            className={
-                                `bg-white flex flex-col items-center justify-around  rounded-3xl p-3 shadow-2xl` +
-                                " " +
-                                rarity_shadows[draw.rarity]
-                            }
-                        >
-                            <h3 className="font-title">{draw.title}</h3>
-                            <img
-                                src={
-                                    "https://product-images.metro.ca/images/h0f/h7c/10710642425886.jpg"
+                    {results?.length &&
+                        results.slice(0, 5).map((draw) => (
+                            <div
+                                key={draw.name}
+                                className={
+                                    `bg-white flex flex-col items-center justify-around  rounded-3xl p-3 shadow-2xl w-64 h-96` +
+                                    " " +
+                                    rarity_shadows[draw.rarity]
                                 }
-                                alt="card img"
-                                className="object-cover rounded-3xl h-32 p-1"
-                            />
-                            <p>
-                                Rarity:{" "}
-                                <span className="font-bold">{draw.rarity}</span>
-                            </p>
-                            <div className="flex justify-evenly w-full text-center">
-                                <div>
-                                    <p>Was:</p>
-                                    <p className="line-through">
-                                        ${draw.price}
-                                    </p>
-                                </div>
-                                <div>
-                                    <p>You Pay:</p>
-                                    <p className="font-bold">
-                                        ${(draw.price * 0.65).toFixed(2)}
-                                    </p>
+                            >
+                                <h3 className="font-title text-center">
+                                    {draw.name}
+                                </h3>
+                                <img
+                                    src={draw.img}
+                                    alt="card img"
+                                    className="object-cover rounded-3xl p-1"
+                                />
+                                <p>
+                                    Rarity:{" "}
+                                    <span className="font-bold">
+                                        {draw.rarity}
+                                    </span>
+                                </p>
+                                <div className="flex justify-evenly w-full text-center">
+                                    <div>
+                                        <p>Was:</p>
+                                        <p className="line-through">
+                                            ${draw.cost}
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <p>You Pay:</p>
+                                        <p className="font-bold">
+                                            ${(draw.cost * 0.65).toFixed(2)}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
                 </div>
-                <Link
-                    className="absolute bottom-1/4 left-1/2 -translate-x-1/2 bg-theme-orange button button-shadow text-theme-purple active:shadow-none transition-all"
-                    href={"Summary"}
+                <button
+                    className="button bg-theme-orange text-theme-purple bottom-[15%] button-shadow left-1/2 -translate-x-1/2 absolute"
+                    onClick={() => results && alert(JSON.stringify(results[5]))}
                 >
-                    Summary
-                </Link>
+                    Get Coupon
+                </button>
             </main>
         </>
     );

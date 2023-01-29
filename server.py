@@ -3,12 +3,19 @@ from fastapi.logger import logger
 from typing import Union
 from pydantic import BaseSettings
 from util import DataGatherer
+from fastapi.middleware.cors import CORSMiddleware
+
 
 class Settings(BaseSettings):
     BASE_URL = 'http://localhost:8000'
 
 settings = Settings()
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*']
+)
 
 @app.get('/{item_count}')
 def get(item_count: int, q: Union[str, None] = None):
