@@ -14,14 +14,15 @@
 
 @layer components {
     .button {
-        @apply bg-[#FC8002] p-2 rounded-full;
+        @apply p-2 rounded-full;
     }
 
-    .purple-shadow {
-        background: #fc8002;
-        box-shadow: 4px 4px 0px 1px #3d1061;
+    .button-shadow {
+        box-shadow: 4px 4px 0px 1px;
         border-radius: 50px;
     }
+
+    
 }
 
 @layer utilities {
