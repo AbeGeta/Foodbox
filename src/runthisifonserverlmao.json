@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Antipasto Misto",
+        "cost": 7.99,
+        "img": "https://product-images.metro.ca/images/hb3/hde/9529877168158.jpg",
+        "rarity": "common"
+    },
+    {
+        "name": "Grand-Mère Cretons",
+        "cost": 4.49,
+        "img": "https://product-images.metro.ca/images/h39/h54/10250170794014.jpg",
+        "rarity": "common"
+    },
+    {
+        "name": "Creamy Coleslaw",
+        "cost": 4.79,
+        "img": "https://product-images.metro.ca/images/h6d/hdc/10053712543774.jpg",
+        "rarity": "epic"
+    },
+    {
+        "name": "Pepperoni Slices",
+        "cost": 6.99,
+        "img": "https://product-images.metro.ca/images/h7d/hbb/8824095375390.jpg",
+        "rarity": "epic"
+    },
+    {
+        "name": "Black Forest Ham, Artisan",
+        "cost": 3.59,
+        "img": "https://product-images.metro.ca/images/h7e/h2d/9254255755294.jpg",
+        "rarity": "rare"
+    }
+]

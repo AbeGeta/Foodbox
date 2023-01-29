@@ -3,7 +3,7 @@ import Head from "next/head";
 import PullPageBg from "@/components/svgs/PullPageBg";
 import { useEffect, useState } from "react";
 import * as Dialog from "@radix-ui/react-dialog";
-
+import randomRes from "@/runthisifonserverlmao.json";
 interface Draw {
     name: string;
     rarity: string;
@@ -20,6 +20,10 @@ export default function MainBox() {
     };
     const [results, setResults] = useState<null | Draw[]>(null);
     useEffect(() => {
+        if (process.env.NODE_ENV === "production") {
+            setResults(randomRes);
+            return;
+        }
         fetch("http://127.0.0.1:8000/5")
             .then((res) => res.json())
             .then((res) => setResults(res));
