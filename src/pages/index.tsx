@@ -2,8 +2,6 @@ import Head from "next/head";
 import Image from "next/image";
 import { Inter } from "@next/font/google";
 import BoxWFruits from "@/components/svgs/BoxWFruits";
-import Link from "next/link";
-import DietaryRestrictionsList from "@/components/DietaryRestrictionsList";
 
 const inter = Inter({ subsets: ["latin"] });
 
