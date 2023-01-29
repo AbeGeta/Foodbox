@@ -3,6 +3,7 @@ import Head from "next/head";
 import MainBoxPageBackground from "@/components/svgs/MainBoxPageBackground";
 import PullPageBg from "@/components/svgs/PullPageBg";
 import Link from "next/link";
+import { useQuery } from "react-query";
 
 const draws = [
     {
@@ -37,6 +38,11 @@ const draws = [
     },
 ];
 
+const getFoods = async () => {
+    const result = await fetch("").then((res) => res.json());
+    return result;
+};
+
 export default function MainBox() {
     const rarity_shadows: { [key: string]: string } = {
         rare: "shadow-blue-500",
@@ -44,6 +50,8 @@ export default function MainBox() {
         epic: "shadow-purple-500",
         common: "shadow-black",
     };
+    const { data, isSuccess } = useQuery("foods", getFoods);
+
     return (
         <>
             <Head>
@@ -65,16 +73,18 @@ export default function MainBox() {
                         <div
                             key={draw.title}
                             className={
-                                `bg-white h-64 flex flex-col items-center justify-around  rounded-3xl p-1 shadow-2xl` +
+                                `bg-white flex flex-col items-center justify-around  rounded-3xl p-3 shadow-2xl` +
                                 " " +
                                 rarity_shadows[draw.rarity]
                             }
                         >
                             <h3 className="font-title">{draw.title}</h3>
                             <img
-                                src={draw.img}
+                                src={
+                                    "https://product-images.metro.ca/images/h0f/h7c/10710642425886.jpg"
+                                }
                                 alt="card img"
-                                className="object-cover rounded-3xl p-1"
+                                className="object-cover rounded-3xl h-32 p-1"
                             />
                             <p>
                                 Rarity:{" "}
