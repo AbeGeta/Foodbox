@@ -90,7 +90,7 @@ export default function MainBox() {
                     className="button bg-theme-orange text-theme-purple bottom-[15%] button-shadow left-1/2 -translate-x-1/2 absolute"
                     onClick={() =>
                         alert(
-                            results ? JSON.stringify(results[5]) : "FDX2352352"
+                            results?.length===6 ? JSON.stringify(results[5]) : "FDX2352352"
                         )
                     }
                 >
