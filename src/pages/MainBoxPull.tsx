@@ -2,6 +2,7 @@
 import Head from "next/head";
 import MainBoxPageBackground from "@/components/svgs/MainBoxPageBackground";
 import PullPageBg from "@/components/svgs/PullPageBg";
+import Link from "next/link";
 
 const draws = [
     {
@@ -89,13 +90,19 @@ export default function MainBox() {
                                 <div>
                                     <p>You Pay:</p>
                                     <p className="font-bold">
-                                        ${(draw.price * 0.8).toFixed(2)}
+                                        ${(draw.price * 0.65).toFixed(2)}
                                     </p>
                                 </div>
                             </div>
                         </div>
                     ))}
                 </div>
+                <Link
+                    className="absolute bottom-1/4 left-1/2 -translate-x-1/2 bg-theme-orange button button-shadow text-theme-purple active:shadow-none transition-all"
+                    href={"Summary"}
+                >
+                    Summary
+                </Link>
             </main>
         </>
     );
