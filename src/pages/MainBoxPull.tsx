@@ -3,21 +3,46 @@ import Head from "next/head";
 import MainBoxPageBackground from "@/components/svgs/MainBoxPageBackground";
 import PullPageBg from "@/components/svgs/PullPageBg";
 
+const draws = [
+    {
+        title: "White Ham",
+        rarity: "epic",
+        price: 4.49,
+        img: "https://picsum.photos/300/200",
+    },
+    {
+        title: "Creamy Coleslaw",
+        rarity: "legendary",
+        price: 8.99,
+        img: "https://picsum.photos/300/200",
+    },
+    {
+        title: "Creamy Coleslaw",
+        rarity: "legendary",
+        price: 8.99,
+        img: "https://picsum.photos/300/200",
+    },
+    {
+        title: "Creamy Coleslaw",
+        rarity: "rare",
+        price: 8.99,
+        img: "https://picsum.photos/300/200",
+    },
+    {
+        title: "Creamy Coleslaw",
+        rarity: "common",
+        price: 8.99,
+        img: "https://picsum.photos/300/200",
+    },
+];
+
 export default function MainBox() {
-    const draws = [
-        {
-            title: "White Ham",
-            rarity: "epic",
-            price: 4.49,
-            img: "https://picsum.photos/300/200",
-        },
-        {
-            title: "Creamy Coleslaw",
-            rarity: "legendary",
-            price: 8.99,
-            img: "https://picsum.photos/300/200",
-        },
-    ];
+    const rarity_shadows: { [key: string]: string } = {
+        rare: "shadow-blue-500",
+        legendary: "shadow-orange-600",
+        epic: "shadow-purple-500",
+        common: "shadow-black",
+    };
     return (
         <>
             <Head>
@@ -34,20 +59,24 @@ export default function MainBox() {
                     <PullPageBg></PullPageBg>
                 </div>
                 {/* Food Cards */}
-                <div className="flex w-full justify-between items-center z-10">
+                <div className="flex w-full justify-evenly gap-3 items-center z-10 mt-16">
                     {draws.map((draw) => (
                         <div
                             key={draw.title}
-                            className="bg-white h-64 flex flex-col items-center rounded-3xl"
+                            className={
+                                `bg-white h-64 flex flex-col items-center justify-around  rounded-3xl p-1 shadow-2xl` +
+                                " " +
+                                rarity_shadows[draw.rarity]
+                            }
                         >
                             <h3 className="font-title">{draw.title}</h3>
                             <img
                                 src={draw.img}
                                 alt="card img"
-                                className="object-cover w-3/4 rounded-3xl"
+                                className="object-cover rounded-3xl p-1"
                             />
                             <p>
-                                Rarity:
+                                Rarity:{" "}
                                 <span className="font-bold">{draw.rarity}</span>
                             </p>
                             <div className="flex justify-evenly w-full text-center">
