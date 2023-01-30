@@ -1,4 +1,5 @@
-Foodbox: Dine and discover. Using React, Next.js, Python, Tailwind CSS, Supabase PostgreSQL and Vercel for deployment. 
+## Foodbox: Dine and discover. 
+Using React, Next.js, Python, Tailwind CSS, Supabase PostgreSQL and Vercel for deployment. 
 
 McHacks 2023 2nd place winner, TELUS Sustainability challenge award
 
