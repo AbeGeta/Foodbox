@@ -1,9 +1,9 @@
-## Foodbox: Dine and discover. 
+## Foodbox
+Dine and discover - foodbox.getachew.dev
+
 Using React, Next.js, Python, Tailwind CSS, Supabase PostgreSQL and Vercel for deployment. 
 
 McHacks 2023 2nd place winner, TELUS Sustainability challenge award
-
-foodbox.getachew.dev
 
 ## 💡 Inspiration 💡
 The idea for Foodbox was inspired by the growing problem of food waste in our society. According to the United Nations, one-third of all food produced globally is wasted, which not only has a significant environmental impact but also a social one, as so many people are struggling with food insecurity. We realized that grocery stores often have a surplus of certain products that don't sell well, and we wanted to find a way to help them move this inventory and avoid waste. At the same time, we saw an opportunity for consumers to discover new products at a discounted price.
