@@ -1,5 +1,5 @@
 ## Foodbox
-Dine and discover - foodbox.getachew.dev
+Dine and discover - https://foodbox.getachew.dev/
 
 Using React, Next.js, Python, Tailwind CSS, Supabase PostgreSQL and Vercel for deployment. 
 
