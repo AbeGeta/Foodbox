@@ -1,5 +1,5 @@
 ## Foodbox
-Dine and discover: https://foodbox.getachew.dev/ (alternate link: foodbox-self.vercel.app)
+Dine and discover: https://foodbox.getachew.dev/ (alternate link: [foodbox-self.vercel.app](https://foodbox-self.vercel.app/))
 
 Using React, Next.js, Python, Tailwind CSS, Supabase PostgreSQL and Vercel for deployment. 
 
